@@ -341,12 +341,12 @@ rail.addEventListener('click', e => { if (e.target.closest('a')) { rail.classLis
 let groups = '', g = null;
 SL.forEach((x, i) => {
   if (x.group !== g) { if (g) groups += '</div>'; g = x.group; groups += `<h3>${esc(g)}</h3><div class="tgrid">`; }
-  groups += `<a href="#s.${i+1}" data-n="${i+1}" title="${i+1}. ${esc(x.title)}"><img src="thumbs/t-${pad(i+1)}.jpg" alt="Slide ${i+1}: ${esc(x.title)}" loading="lazy"><span>${i+1}</span></a>`;
+  groups += `<a href="#s.${i+1}" data-n="${i+1}" title="${i+1}. ${esc(x.title)}"><img src="thumbs/t-${pad(i+1)}.jpg?v=20261024b" alt="Slide ${i+1}: ${esc(x.title)}" loading="lazy"><span>${i+1}</span></a>`;
 });
 groups += '</div>';
 vSl.innerHTML = `<div class="pv">
   <section class="stagecol">
-    <div class="stage" id="stage">${SL.map((x, i) => `<figure class="slide" id="slide-${i+1}" data-comment-target hidden><img data-src="slides/s-${pad(i+1)}.jpg" alt="Slide ${i+1}: ${esc(x.title)}"></figure>`).join('')}
+    <div class="stage" id="stage">${SL.map((x, i) => `<figure class="slide" id="slide-${i+1}" data-comment-target hidden><img data-src="slides/s-${pad(i+1)}.jpg?v=20261024b" alt="Slide ${i+1}: ${esc(x.title)}"></figure>`).join('')}
       <button class="hit l" aria-label="Previous slide" id="hl" data-uncommentable></button><button class="hit r" aria-label="Next slide" id="hr" data-uncommentable></button></div>
     <div class="ctrl" data-uncommentable>
       <div class="nav"><button class="pbtn" id="prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg></button>
